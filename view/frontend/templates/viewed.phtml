@@ -22,16 +22,15 @@
                 <h1><?= __('Best sellers') ?></h1>
             </div>
             <!-- products list items product-items  -->
-            <ol class="regulars slider">
+            <ol class="products list items product-items regulars slider">
                 <?php foreach ($collection->getData() as $data) { ?>
-                    <div>
-                        <?php $product_id = $data['product_id']; ?>
-                        <?php $_product = $block->getLoadProduct($product_id); ?>
-                        <?php if (isset($_product)): ?>
-                            <?php if ($_product->getID()): ?>
-                                <?php /* @escapeNotVerified */ ?>
-                                <?php echo ($iterator++ == 1) ? '<li>' : '</li><li>' ?>
-                                <div data-container="product-grid">
+                    <?php $product_id = $data['product_id']; ?>
+                    <?php $_product = $block->getLoadProduct($product_id); ?>
+                    <?php if (isset($_product)): ?>
+                        <?php if ($_product->getID()): ?>
+                            <?php /* @escapeNotVerified */ ?>
+                            <?php echo ($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item ">' ?>
+                            <div data-container="product-grid">
                                     <?php $productImage = $list_product->getImage($_product, $image); ?>
                                     <?php if ($pos != null): ?>
                                         <?php $position = ' style="left:' . $productImage->getWidth() . 'px;' . 'top:' . $productImage->getHeight() . 'px;"'; ?>
@@ -101,10 +100,9 @@
                                         
                                     </div>
                                 </div>
-                                <?php echo ($iterator == count($collection) + 1) ? '</li>' : '' ?>
-                            <?php endif; ?>
+                            <?php echo ($iterator == count($collection) + 1) ? '</li>' : '' ?>
                         <?php endif; ?>
-                    </div>
+                    <?php endif; ?>
                 <?php } ?>
             </ol>
         </div>
@@ -115,16 +113,15 @@
                 <h1><?= __('New arrivals') ?></h1>
             </div>
             <!-- products list items product-items  -->
-            <ol class="regulars slider">
+            <ol class="products list items product-items regulars slider">
                 <?php foreach ($collection->getData() as $data) { ?>
-                    <div>
-                        <?php $product_id = $data['product_id']; ?>
-                        <?php $_product = $block->getLoadProduct($product_id); ?>
-                        <?php if (isset($_product)): ?>
-                            <?php if ($_product->getID()): ?>
-                                <?php /* @escapeNotVerified */ ?>
-                                <?php echo ($iterator++ == 1) ? '<li>' : '</li><li>' ?>
-                                <div data-container="product-grid">
+                    <?php $product_id = $data['product_id']; ?>
+                    <?php $_product = $block->getLoadProduct($product_id); ?>
+                    <?php if (isset($_product)): ?>
+                        <?php if ($_product->getID()): ?>
+                            <?php /* @escapeNotVerified */ ?>
+                            <?php echo ($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item ">' ?>
+                            <div data-container="product-grid">
                                     <?php $productImage = $list_product->getImage($_product, $image); ?>
                                     <?php if ($pos != null): ?>
                                         <?php $position = ' style="left:' . $productImage->getWidth() . 'px;' . 'top:' . $productImage->getHeight() . 'px;"'; ?>
@@ -194,10 +191,9 @@
                                         
                                     </div>
                                 </div>
-                                <?php echo ($iterator == count($collection) + 1) ? '</li>' : '' ?>
-                            <?php endif; ?>
+                            <?php echo ($iterator == count($collection) + 1) ? '</li>' : '' ?>
                         <?php endif; ?>
-                    </div>
+                    <?php endif; ?>
                 <?php } ?>
             </ol>
         </div>
